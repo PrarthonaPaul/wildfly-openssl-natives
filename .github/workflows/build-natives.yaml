@@ -9,14 +9,14 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}-jdk${{ matrix.java }}
+    runs-on: ${{ matrix.os }}
     defaults:
       run:
         working-directory: main
     strategy:
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
-        java: ['11', '21']
+        java: ['11', '17', '21']
         include:
           - os: windows-latest
             vcvars: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat
